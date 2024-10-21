@@ -2,6 +2,7 @@ fn main() {
     variable();
     numeric_operator();
     comparison_operator();
+    boolean_operator();
 }
 
 fn variable() {
@@ -42,4 +43,15 @@ fn comparison_operator() {
     println!("{} is equal to {}? {}",a,b,e);
     let f = a != b;
     println!("{} is not equal to {}? {}",a,b,f);
+}
+
+fn boolean_operator() {
+    let a = true;
+    let b = false;
+    let c = a && b;
+    println!("{} and {} is {}",a,b,c);
+    let d = a || b;
+    println!("{} or {} is {}",a,b,d);
+    let e = !a;
+    println!("not {} is {}",a,e);
 }

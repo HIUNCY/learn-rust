@@ -3,6 +3,7 @@ fn main() {
     numeric_operator();
     comparison_operator();
     boolean_operator();
+    tuple();
 }
 
 fn variable() {
@@ -54,4 +55,22 @@ fn boolean_operator() {
     println!("{} or {} is {}",a,b,d);
     let e = !a;
     println!("not {} is {}",a,e);
+}
+
+fn tuple() {
+    let tuple = (1, 2.5, false);
+    println!("tuple is {:?}", tuple);
+    // access tuple element
+    println!("{}", tuple.0);
+    println!("{}", tuple.1);
+    println!("{}", tuple.2);
+
+    // destructuring tuple
+    let (a, b, c) = tuple;
+    println!("{}", a);
+    println!("{}", b);
+    println!("{}", c);
+    // tuple.0 = 10; ERROR
+
+    // NOTE: same as variable, the default of tuple is immutable. if u want to change the value of tuple, u need to use mut
 }

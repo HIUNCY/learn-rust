@@ -4,6 +4,7 @@ fn main() {
     comparison_operator();
     boolean_operator();
     tuple();
+    array();
 }
 
 fn variable() {
@@ -73,4 +74,36 @@ fn tuple() {
     // tuple.0 = 10; ERROR
 
     // NOTE: same as variable, the default of tuple is immutable. if u want to change the value of tuple, u need to use mut
+}
+
+fn array() {
+    let array = [1, 2, 3, 4, 5];
+    println!("array is {:?}", array);
+    println!("array length is {}", array.len());
+
+    // access array element
+    println!("{}", array[0]);
+    println!("{}", array[1]);
+    println!("{}", array[2]);
+    println!("{}", array[3]);
+    println!("{}", array[4]);
+
+    // destructuring array
+    let [a, b, c, d, e] = array;
+    println!("{}", a);
+    println!("{}", b);
+    println!("{}", c);
+    println!("{}", d);
+    println!("{}", e);
+    // array[0] = 10; ERROR
+
+    // NOTE: same as variable, the default of array is immutable. if u want to change the value of array, u need to use mut
+
+    // two dimensional array
+    let matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ];
+    println!("matrix is {:?}", matrix);
 }

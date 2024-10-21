@@ -5,6 +5,7 @@ fn main() {
     boolean_operator();
     tuple();
     array();
+    conditional_statement();
 }
 
 fn variable() {
@@ -106,4 +107,18 @@ fn array() {
         [7, 8, 9]
     ];
     println!("matrix is {:?}", matrix);
+}
+
+fn conditional_statement() {
+    let score = 65;
+
+    let result = if score >= 75 {
+        "Congratulations!"
+    } else if score >= 60 && score < 75 {
+        "Average!"
+    } else {
+        "Try again!"
+    };
+
+    println!("{}", result);
 }

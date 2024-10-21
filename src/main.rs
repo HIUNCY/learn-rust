@@ -1,6 +1,7 @@
 fn main() {
     variable();
     numeric_operator();
+    comparison_operator();
 }
 
 fn variable() {
@@ -28,4 +29,17 @@ fn numeric_operator() {
     println!("The quotient of {} and {} is {}", a, b, f);
     let g = a % b;
     println!("The remainder of {} and {} is {}", a, b, g);
+}
+
+fn comparison_operator() {
+    let a = 10;
+    let b = 20;
+    let c = a > b;
+    println!("{} is greater than {}? {}",a,b,c);
+    let d = a < b;
+    println!("{} is less than {}? {}",a,b,d);
+    let e = a == b;
+    println!("{} is equal to {}? {}",a,b,e);
+    let f = a != b;
+    println!("{} is not equal to {}? {}",a,b,f);
 }

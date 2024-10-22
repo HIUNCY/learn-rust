@@ -11,6 +11,7 @@ fn main() {
     print_text("Ajay", 3);
     let result = factorial(5);
     println!("Factorial result is {}", result);
+    struct_example();
 }
 
 fn variable() {
@@ -173,4 +174,35 @@ fn factorial(n : u32) -> u32 {
         return 1;
     }
     return n * factorial(n - 1);
+}
+
+struct Person {
+    first_name: String,
+    middle_name: String,
+    last_name: String,
+    age: u8,
+}
+
+fn struct_example() {
+    let person = Person {
+        first_name: String::from("Muhamad"),
+        middle_name: String::from("Zainul"),
+        last_name: String::from("Kamal"),
+        age: 22,
+    };
+    println!("Person name: {}", person.first_name);
+    println!("Person name: {}", person.middle_name);
+    println!("Person name: {}", person.last_name);
+    println!("Person name: {}", person.age);
+
+    let person2 = Person {
+        first_name: person.first_name.clone(),
+        middle_name: String::from("Zainul"),
+        last_name: person.last_name.clone(),
+        ..person
+    };
+    println!("Person name: {}", person2.first_name);
+    println!("Person name: {}", person2.middle_name);
+    println!("Person name: {}", person2.last_name);
+    println!("Person name: {}", person2.age);
 }

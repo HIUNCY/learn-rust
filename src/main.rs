@@ -7,6 +7,10 @@ fn main() {
     array();
     conditional_statement();
     looping();
+    say_hello("Zainul", "Kamal");
+    print_text("Ajay", 3);
+    let result = factorial(5);
+    println!("Factorial result is {}", result);
 }
 
 fn variable() {
@@ -149,4 +153,24 @@ fn looping() {
     for item in arr {
         println!("Value: {}", item);
     }
+}
+
+fn say_hello(first_name : &str, last_name : &str) {
+    println!("Hello, {} {}!", first_name, last_name);
+}
+
+fn print_text(text : &str, times : u32) {
+    if times == 0 {
+        return;
+    } else {
+        println!("{}", text);
+    }
+    print_text(text, times - 1);
+}
+
+fn factorial(n : u32) -> u32 {
+    if n <= 1 {
+        return 1;
+    }
+    return n * factorial(n - 1);
 }

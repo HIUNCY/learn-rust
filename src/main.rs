@@ -6,6 +6,7 @@ fn main() {
     tuple();
     array();
     conditional_statement();
+    looping();
 }
 
 fn variable() {
@@ -121,4 +122,31 @@ fn conditional_statement() {
     };
 
     println!("{}", result);
+}
+
+fn looping() {
+    let mut counter = 0;
+    loop {
+        counter += 1;
+        if counter > 10 {
+            break;
+        } else if counter % 2 == 0 {
+            continue;
+        }
+
+        println!("Counter: {}", counter);
+    }
+
+    counter = 0;
+    while counter < 10 {
+        if counter % 2 == 0 {
+            println!("Counter: {}", counter);
+        }
+        counter += 1;
+    }
+
+    let arr = ["a", "b", "c", "d"];
+    for item in arr {
+        println!("Value: {}", item);
+    }
 }

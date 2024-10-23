@@ -19,6 +19,7 @@ fn main() {
         age: 22,
     };
     person.say_hello("Ajay");
+    enum_example();
 }
 
 fn variable() {
@@ -218,4 +219,25 @@ impl Person {
     fn say_hello(&self, name: &str) {
         println!("Hello {}, my name is {}!", name, self.first_name);
     }
+}
+
+enum Payment {
+    CreditCard(String),
+    BankTransfer(String, String),
+    EWallet(String, String),
+}
+
+impl Payment {
+    fn pay(&self, amount: u32) {
+        println!("Payment amount: {}", amount);
+    }
+}
+
+fn enum_example() {
+    let _payment1 = Payment::BankTransfer(String::from("BCA"), String::from("1937183"));
+    _payment1.pay(100000);
+    let _payment2 = Payment::CreditCard(String::from("17462184278423"));
+    _payment2.pay(200000);
+    let _payment3 = Payment::EWallet(String::from("DANA"), String::from("0891631763"));
+    _payment3.pay(300000);
 }

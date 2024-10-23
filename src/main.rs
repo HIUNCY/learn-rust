@@ -12,6 +12,13 @@ fn main() {
     let result = factorial(5);
     println!("Factorial result is {}", result);
     struct_example();
+    let person = Person {
+        first_name: String::from("Muhamad"),
+        middle_name: String::from("Zainul"),
+        last_name: String::from("Kamal"),
+        age: 22,
+    };
+    person.say_hello("Ajay");
 }
 
 fn variable() {
@@ -205,4 +212,10 @@ fn struct_example() {
     println!("Person name: {}", person2.middle_name);
     println!("Person name: {}", person2.last_name);
     println!("Person name: {}", person2.age);
+}
+
+impl Person {
+    fn say_hello(&self, name: &str) {
+        println!("Hello {}, my name is {}!", name, self.first_name);
+    }
 }

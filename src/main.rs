@@ -1,5 +1,6 @@
 mod first;
 mod second;
+mod third;
 mod model;
 
 use first::say_hello as say_hello1;
@@ -31,6 +32,7 @@ fn main() {
     user.say_hello();
     say_hello1();
     say_hello2();
+    first::second::third::say_hello();
 }
 
 fn variable() {

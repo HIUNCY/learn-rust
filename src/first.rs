@@ -1,3 +1,15 @@
+use crate::third::say_hello as say_hello3;
+
 pub fn say_hello() {
     println!("Hello from first module!");
+    say_hello3();
+}
+
+pub mod second {
+    pub mod third {
+        pub fn say_hello() {
+            // crate::first::say_hello();
+            super::super::say_hello();
+        }
+    }
 }

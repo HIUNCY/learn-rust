@@ -229,15 +229,37 @@ enum Payment {
 
 impl Payment {
     fn pay(&self, amount: u32) {
-        println!("Payment amount: {}", amount);
+        match self {
+            Payment::CreditCard(card_number) => {
+                println!("Credit card number: {}, amount: Rp {}", card_number, amount);
+            }
+            Payment::BankTransfer(bank_name, account_number) => {
+                println!("Bank name: {}, account number: {}, amount: Rp {}", bank_name, account_number, amount);
+            }
+            Payment::EWallet(e_wallet_name, e_wallet_number) => {
+                println!("E-wallet name: {}, e-wallet number: {}, amount: Rp {}", e_wallet_name, e_wallet_number, amount);
+            }
+        }
     }
 }
 
 fn enum_example() {
-    let _payment1 = Payment::BankTransfer(String::from("BCA"), String::from("1937183"));
-    _payment1.pay(100000);
-    let _payment2 = Payment::CreditCard(String::from("17462184278423"));
-    _payment2.pay(200000);
-    let _payment3 = Payment::EWallet(String::from("DANA"), String::from("0891631763"));
-    _payment3.pay(300000);
+    let payment1 = Payment::CreditCard(String::from("098765456789"));
+    payment1.pay(100000);
+    let payment2 = Payment::BankTransfer(String::from("BCA"), String::from("1937183"));
+    payment2.pay(300000);
+    let payment2 = Payment::EWallet(String::from("DANA"), String::from("456789987654"));
+    payment2.pay(800000);
+
+    let person = Person {
+        first_name: String::from("Muhamad"),
+        middle_name: String::from("Zainul"),
+        last_name: String::from("Kamal"),
+        age: 22,
+    };
+    match person {
+        Person {first_name, age, ..} => {
+            println!("Person name: {}, age: {}", first_name, age);
+        }
+    }
 }

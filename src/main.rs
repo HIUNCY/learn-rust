@@ -1,3 +1,10 @@
+mod first;
+mod second;
+mod model;
+
+use first::say_hello as say_hello1;
+use second::say_hello as say_hello2;
+
 fn main() {
     variable();
     numeric_operator();
@@ -20,6 +27,10 @@ fn main() {
     };
     person.say_hello("Ajay");
     enum_example();
+    let user = model::User::new("Muhamad".to_string(), "Zainul".to_string(), "ajay".to_string(), "muhamad@gmail.com".to_string(), 22);
+    user.say_hello();
+    say_hello1();
+    say_hello2();
 }
 
 fn variable() {
